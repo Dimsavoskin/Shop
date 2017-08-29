@@ -2,7 +2,9 @@ package com.example.dimsa.shop;
 
 
 public class ProgrammingBook extends Book{
-    String language;
+    static final String TYPE = "Программирование";
+
+    private String language;
 
     public ProgrammingBook(String name, int price, int barcode, int pages, String language) {
         super(name, price, barcode, pages);

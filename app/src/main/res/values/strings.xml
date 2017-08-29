@@ -4,5 +4,6 @@
     <string name="books_list">Книги</string>
     <string name="discs_list">Диски</string>
 
-
+    <string name="programming">Программирование</string>
+    <string name="cooking">Кулинария</string>
 </resources>

@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -48,11 +46,35 @@ public class ProductAdapter extends BaseAdapter {
 
         Product p = getProduct(position);
 
+     //   System.out.println(p.getClass().getSimpleName()+ position);
+
+        if (p.getClass() == ProgrammingBook.class) {
+            ProgrammingBook book = (ProgrammingBook) p;
+            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+        } else if (p.getClass() == CookeryBook.class) {
+            CookeryBook book = (CookeryBook) p;
+            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+        } else if (p.getClass() == EsotericsBook.class) {
+            EsotericsBook book = (EsotericsBook) p;
+            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+
+        } else if (p.getClass() == VideoDisc.class) {
+            VideoDisc book = (VideoDisc) p;
+            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+        } else if (p.getClass() == MusicDisc.class) {
+            MusicDisc book = (MusicDisc) p;
+            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+        } else if (p.getClass() == ProgrammingDisc.class) {
+            ProgrammingDisc book = (ProgrammingDisc) p;
+            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+        } else ((TextView) view.findViewById(R.id.tvType)).setText("");
+
+
         ((TextView) view.findViewById(R.id.tvName)).setText(p.getName());
-        ((TextView) view.findViewById(R.id.tvPrice)).setText(p.getPrice() + "");
 
         return view;
     }
+
 
     Product getProduct(int position) {
         return ((Product) getItem(position));
