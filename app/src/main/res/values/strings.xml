@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Магазин</string>
+
+    <string name="books_list">Книги</string>
+    <string name="discs_list">Диски</string>
+
+
+</resources>
