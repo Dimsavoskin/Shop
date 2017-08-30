@@ -6,4 +6,6 @@
 
     <string name="programming">Программирование</string>
     <string name="cooking">Кулинария</string>
+    <string name="price">Цена</string>
+    <string name="barcode">Штрихкод</string>
 </resources>

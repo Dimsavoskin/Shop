@@ -4,14 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.dimsa.shop.MainActivity">
+    tools:context="com.example.dimsa.shop.MainActivity"
+    android:background="@color/colorGrey">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:orientation="vertical">
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+
+        >
 
         <TextView
             android:layout_width="match_parent"
@@ -23,7 +26,8 @@
         <ListView
             android:id="@+id/listOfBooks"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"/>
     </LinearLayout>
 
 
@@ -31,8 +35,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_margin="5dp"
-        android:orientation="vertical">
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:orientation="vertical"
+        >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +52,7 @@
             android:id="@+id/listOfDiscs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/listOfBooks" />
+            android:background="@color/colorWhite"/>
     </LinearLayout>
 
 

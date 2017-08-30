@@ -11,9 +11,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ProductAdapter extends BaseAdapter {
-    Context ctx;
-    LayoutInflater lInflater;
-    ArrayList<? extends Product> objects;
+    private Context ctx;
+    private LayoutInflater lInflater;
+    private ArrayList<? extends Product> objects;
 
     public ProductAdapter(Context ctx, ArrayList<? extends Product> objects) {
         this.ctx = ctx;
@@ -50,24 +50,24 @@ public class ProductAdapter extends BaseAdapter {
 
         if (p.getClass() == ProgrammingBook.class) {
             ProgrammingBook book = (ProgrammingBook) p;
-            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+            setTypeText(view, book.CONTENTTYPE);
         } else if (p.getClass() == CookeryBook.class) {
             CookeryBook book = (CookeryBook) p;
-            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+            setTypeText(view, book.CONTENTTYPE);
         } else if (p.getClass() == EsotericsBook.class) {
             EsotericsBook book = (EsotericsBook) p;
-            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+            setTypeText(view, book.CONTENTTYPE);
 
         } else if (p.getClass() == VideoDisc.class) {
             VideoDisc book = (VideoDisc) p;
-            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+            setTypeText(view, book.CONTENTTYPE);
         } else if (p.getClass() == MusicDisc.class) {
             MusicDisc book = (MusicDisc) p;
-            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
+            setTypeText(view, book.CONTENTTYPE);
         } else if (p.getClass() == ProgrammingDisc.class) {
             ProgrammingDisc book = (ProgrammingDisc) p;
-            ((TextView) view.findViewById(R.id.tvType)).setText(book.TYPE);
-        } else ((TextView) view.findViewById(R.id.tvType)).setText("");
+            setTypeText(view, book.CONTENTTYPE);
+        } else setTypeText(view, "");
 
 
         ((TextView) view.findViewById(R.id.tvName)).setText(p.getName());
@@ -75,8 +75,12 @@ public class ProductAdapter extends BaseAdapter {
         return view;
     }
 
+    private void setTypeText(View view, String contenttype) {
+        ((TextView) view.findViewById(R.id.tvType)).setText(contenttype);
+    }
 
-    Product getProduct(int position) {
+
+    private Product getProduct(int position) {
         return ((Product) getItem(position));
     }
 

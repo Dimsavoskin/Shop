@@ -1,7 +1,5 @@
 package com.example.dimsa.shop;
 
-
-
 public class Product {
     private String name;
     private int price;

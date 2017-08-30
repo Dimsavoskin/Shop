@@ -1,8 +1,7 @@
 package com.example.dimsa.shop;
 
-
 public class EsotericsBook extends Book {
-    static final String TYPE = "Эзотерика";
+    static final String CONTENTTYPE = "Эзотерика";
 
     private int minAge;
 

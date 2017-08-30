@@ -1,11 +1,7 @@
 package com.example.dimsa.shop;
 
-
 public class Book extends Product {
-
-
     private int pages;
-
 
     public Book(String name, int price, int barcode, int pages) {
         super(name, price, barcode);

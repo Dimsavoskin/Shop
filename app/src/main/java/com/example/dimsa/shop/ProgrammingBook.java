@@ -1,8 +1,7 @@
 package com.example.dimsa.shop;
 
-
 public class ProgrammingBook extends Book{
-    static final String TYPE = "Программирование";
+    static final String CONTENTTYPE = "Программирование";
 
     private String language;
 
