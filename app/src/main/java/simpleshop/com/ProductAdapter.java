@@ -1,4 +1,4 @@
-package com.example.dimsa.shop;
+package simpleshop.com;
 
 
 import android.content.Context;
@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import simpleshop.com.model.Product;
 
 public class ProductAdapter extends BaseAdapter {
-    private Context ctx;
     private LayoutInflater lInflater;
-    private ArrayList<? extends Product> objects;
+    private List<? extends Product> objects;
 
-    public ProductAdapter(Context ctx, ArrayList<? extends Product> objects) {
-        this.ctx = ctx;
+    public ProductAdapter(Context ctx, List<? extends Product> objects) {
         this.objects = objects;
         lInflater = (LayoutInflater) ctx
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -45,30 +45,7 @@ public class ProductAdapter extends BaseAdapter {
         }
 
         Product p = getProduct(position);
-
-     //   System.out.println(p.getClass().getSimpleName()+ position);
-
-        if (p.getClass() == ProgrammingBook.class) {
-            ProgrammingBook book = (ProgrammingBook) p;
-            setTypeText(view, book.CONTENTTYPE);
-        } else if (p.getClass() == CookeryBook.class) {
-            CookeryBook book = (CookeryBook) p;
-            setTypeText(view, book.CONTENTTYPE);
-        } else if (p.getClass() == EsotericsBook.class) {
-            EsotericsBook book = (EsotericsBook) p;
-            setTypeText(view, book.CONTENTTYPE);
-
-        } else if (p.getClass() == VideoDisc.class) {
-            VideoDisc book = (VideoDisc) p;
-            setTypeText(view, book.CONTENTTYPE);
-        } else if (p.getClass() == MusicDisc.class) {
-            MusicDisc book = (MusicDisc) p;
-            setTypeText(view, book.CONTENTTYPE);
-        } else if (p.getClass() == ProgrammingDisc.class) {
-            ProgrammingDisc book = (ProgrammingDisc) p;
-            setTypeText(view, book.CONTENTTYPE);
-        } else setTypeText(view, "");
-
+        setTypeText(view, p.getContentType());
 
         ((TextView) view.findViewById(R.id.tvName)).setText(p.getName());
 
