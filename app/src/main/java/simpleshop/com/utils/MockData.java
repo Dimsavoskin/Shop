@@ -17,16 +17,16 @@ public class MockData {
     static public List<Book> getBooks() {
         final Random random = new Random();
         final List<Book> books = new ArrayList<>();
+        books.add(new ProgrammingBook("CLR via C#", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "C#"));
         books.add(new EsotericsBook("Трансерфинг реальности", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, random.nextInt(21)));
-        books.add(new ProgrammingBook("Язык программирования C", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "C"));
         books.add(new CookeryBook("Гастрономическая энциклопедия", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "Картошка"));
         books.add(new EsotericsBook("Энергия жизни", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, random.nextInt(21)));
-        books.add(new ProgrammingBook("CLR via C#", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "C#"));
         books.add(new CookeryBook("Казан, мангал и другие мужские удовольствия", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "Рис"));
         books.add(new CookeryBook("О еде: строго конфиденциально", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "Лук"));
         books.add(new EsotericsBook("Принципы управления реальностью", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, random.nextInt(21)));
         books.add(new ProgrammingBook("Ruby Hacking Guide", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "Ruby"));
         books.add(new CookeryBook("Хиты советской кухни. По ГОСТу и не только", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "Тушенка"));
+        books.add(new ProgrammingBook("Язык программирования C", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "C"));
         books.add(new CookeryBook("Еда без правил. Простые принципы хорошей кухни", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "Говядина"));
         books.add(new EsotericsBook("Расписание школы жизни", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, random.nextInt(21)));
         books.add(new ProgrammingBook("Microservices for Java Developers", random.nextInt(2000) + 100, random.nextInt(900000) + 10000, random.nextInt(500) + 10, "Java"));

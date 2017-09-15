@@ -5,6 +5,8 @@ import android.os.Parcel;
 import simpleshop.com.model.Product;
 
 public abstract class Book extends Product {
+    private static final String POSTFIX_STR = " страниц";
+
     private int pages;
 
     public Book(String name, int price, int barcode, int pages) {
@@ -37,7 +39,7 @@ public abstract class Book extends Product {
 
     @Override
     public String getFirstParam() {
-        return String.valueOf(pages);
+        return String.valueOf(pages) + POSTFIX_STR;
     }
 
     @Override

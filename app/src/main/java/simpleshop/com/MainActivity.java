@@ -9,17 +9,17 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import simpleshop.com.model.books.Book;
-import simpleshop.com.model.disc.Disc;
 import simpleshop.com.model.Product;
+import simpleshop.com.model.section.SectionItem;
 import simpleshop.com.utils.MockData;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Book> books = new ArrayList<>();
-    private List<Disc> discs = new ArrayList<>();
+    public static final String BOOKS_SECTION = "Книги";
+    public static final String DISCS_SECTION = "Диски";
+
+    private List<Product> products = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,27 +28,16 @@ public class MainActivity extends AppCompatActivity {
 
         init();
 
-        ListView listOfBooks = (ListView) findViewById(R.id.listOfBooks);
-        ListView listOfDiscs = (ListView) findViewById(R.id.listOfDiscs);
+        ListView listOfProducts = (ListView) findViewById(R.id.listOfBooks);
 
-        ProductAdapter booksAdapter = new ProductAdapter(this, books);
-        ProductAdapter discsAdapter = new ProductAdapter(this, discs);
+        ProductAdapter booksAdapter = new ProductAdapter(this, products);
 
-        listOfBooks.setAdapter(booksAdapter);
-        listOfDiscs.setAdapter(discsAdapter);
+        listOfProducts.setAdapter(booksAdapter);
 
-        listOfBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listOfProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Product p = books.get(i);
-                showProductInfo(p);
-            }
-        });
-
-        listOfDiscs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Product p = discs.get(i);
+                Product p = products.get(i);
                 showProductInfo(p);
             }
         });
@@ -61,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void init() {
-        books.addAll(MockData.getBooks());
-        discs.addAll(MockData.getDisc());
+        products.add(new SectionItem(BOOKS_SECTION, 0, 0));
+        products.addAll(MockData.getBooks());
+        products.add(new SectionItem(DISCS_SECTION, 0, 0));
+        products.addAll(MockData.getDisc());
     }
 }

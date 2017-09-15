@@ -4,7 +4,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class EsotericsBook extends Book {
-    public static final String CONTENTTYPE = "Кулинария";
+    public static final String CONTENTTYPE = "Эзотерика";
+    private static final String PREFIX_STR = "Минимальный возраст ";
 
     private int minAge;
 
@@ -39,7 +40,7 @@ public class EsotericsBook extends Book {
 
     @Override
     public String getSecondParam() {
-        return String.valueOf(minAge);
+        return PREFIX_STR + String.valueOf(minAge);
     }
 
     @Override

@@ -40,14 +40,25 @@ public class ProductAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
-        if (view == null) {
-            view = lInflater.inflate(R.layout.list_item, parent, false);
+
+        final Product p = getProduct(position);
+
+        if (p != null) {
+            if (p.isSection()) {
+                view = lInflater.inflate(R.layout.section_item, null);
+                view.setOnClickListener(null);
+                view.setOnLongClickListener(null);
+                view.setLongClickable(false);
+                final TextView sectionView =
+                        (TextView) view.findViewById(R.id.tvSectionTitle);
+                sectionView.setText(p.getName());
+            } else {
+                view = lInflater.inflate(R.layout.list_item, parent, false);
+                setTypeText(view, p.getContentType());
+                ((TextView) view.findViewById(R.id.tvName)).setText(p.getName());
+            }
+
         }
-
-        Product p = getProduct(position);
-        setTypeText(view, p.getContentType());
-
-        ((TextView) view.findViewById(R.id.tvName)).setText(p.getName());
 
         return view;
     }

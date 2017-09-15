@@ -5,6 +5,8 @@ import android.os.Parcelable;
 
 public class CookeryBook extends Book {
     public static final String CONTENTTYPE = "Кулинария";
+    private static final String PREFIX_STR = "Основной ингредиент ";
+
     private String ingredient;
 
     public CookeryBook(String name, int price, int barcode, int pages, String ingredient) {
@@ -38,7 +40,7 @@ public class CookeryBook extends Book {
 
     @Override
     public String getSecondParam() {
-        return ingredient;
+        return PREFIX_STR + ingredient;
     }
 
     @Override

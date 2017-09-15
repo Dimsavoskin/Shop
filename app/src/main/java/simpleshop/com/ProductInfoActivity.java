@@ -49,7 +49,7 @@ public class ProductInfoActivity extends AppCompatActivity {
 
         productType.setText(product.getProductType());
         contentInfo.setText(product.getContentType());
-        pages.setText(product.getFirstParam() != null? product.getFirstParam(): MockData.EMPTY_STRING);
+        pages.setText(product.getFirstParam() != null ? product.getFirstParam() : MockData.EMPTY_STRING);
         specialInfo.setText(product.getSecondParam());
     }
 }

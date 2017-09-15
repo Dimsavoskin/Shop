@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dimsa.shop.ProductInfoActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -19,9 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:textSize="20sp"
             android:textAlignment="center"
-            />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -31,12 +27,12 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginTop="20dp">
+
         <TextView
             android:id="@+id/nameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-             />
+            android:text="" />
 
 
     </LinearLayout>
@@ -54,17 +50,15 @@
             android:id="@+id/typeTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text=""
             android:layout_weight="10"
-             />
+            android:text="" />
 
         <TextView
             android:id="@+id/pagesTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:textAlignment="center"
-             />
+            android:textAlignment="center" />
 
     </LinearLayout>
 
@@ -80,8 +74,7 @@
             android:id="@+id/specialInfoTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            />
+            android:text="" />
 
     </LinearLayout>
 
@@ -95,9 +88,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/price"
             android:layout_weight="1"
-            />
+            android:text="@string/price" />
 
         <TextView
             android:id="@+id/priceTV"
@@ -105,7 +97,7 @@
             android:layout_height="wrap_content"
             android:text=""
 
-             />
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -119,9 +111,8 @@
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/barcode"
             android:layout_weight="1"
-            />
+            android:text="@string/barcode" />
 
         <TextView
             android:id="@+id/barcodeTV"
@@ -129,7 +120,7 @@
             android:layout_height="wrap_content"
             android:text=""
 
-             />
+            />
     </LinearLayout>
 
 </LinearLayout>

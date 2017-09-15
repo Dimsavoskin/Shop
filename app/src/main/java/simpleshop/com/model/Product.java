@@ -3,12 +3,12 @@ package simpleshop.com.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public abstract class Product implements Parcelable{
+public abstract class Product implements Parcelable {
     protected String name;
     protected int price;
     protected int barcode;
 
-    public enum ProductType{
+    public enum ProductType {
         BOOK("Книга"), DISC("Диск");
         private String objName;
 
@@ -57,6 +57,7 @@ public abstract class Product implements Parcelable{
         this.barcode = barcode;
     }
 
+
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
@@ -65,8 +66,15 @@ public abstract class Product implements Parcelable{
     }
 
     public abstract String getProductType();
+
     public abstract String getContentType();
+
     public abstract String getFirstParam();
+
     public abstract String getSecondParam();
+
+    public boolean isSection() {
+        return false;
+    }
 
 }
